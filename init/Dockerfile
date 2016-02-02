@@ -26,32 +26,26 @@ RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
 RUN mkdir /home/ws
 
-#RUN adduser -h /home/ws -s /bin/bash -D web
-#USER web
-#WORKDIR /home/ws
-
 # Clone the conf files into the docker container
-#CMD if [ ! -d "/home/ws/sso" ]; then git clone --branch develop git@github.com:Bruno-de-l-Escaille/SSO.git /home/ws/sso; fi \
-    #&& cd /home/ws/sso \
-    #&& git submodule update --init --recursive \
-    #&& cp /home/ws/sso/config/autoload/local.php.dist.test /home/ws/sso/config/autoload/local.php \
-    #&& mysql -h db -u root -proot -e "CREATE DATABASE IF NOT EXISTS sso DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;" \
-    #&& /home/ws/sso/vendor/Doctrine/DoctrineModule/bin/doctrine-module orm:schema-tool:update -f \
+CMD if [ ! -d "/home/ws/sso" ]; then git clone --branch develop git@github.com:Bruno-de-l-Escaille/SSO.git /home/ws/sso \
+    && cd /home/ws/sso \
+    && git submodule update --init --recursive \
+    && cp /home/ws/sso/config/autoload/local.php.dist.test /home/ws/sso/config/autoload/local.php \
+    && mysql -h db -u root -proot -e "CREATE DATABASE IF NOT EXISTS sso DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;" \
+    && /home/ws/sso/vendor/Doctrine/DoctrineModule/bin/doctrine-module orm:schema-tool:update -f \
+    fi \
 
-    #&& if [ ! -d "/home/ws/btb" ]; then git clone --branch develop git@github.com:Bruno-de-l-Escaille/btbApp.git /home/ws/btb; fi \
-    #&& cd /home/ws/btb/workbench/brunodelescaille/proxyttp \
-    #&& composer self-update \
-    #&& composer update \
-    #&& cd /home/ws/btb \
-    #&& composer update \
-    #&& chown -R web:web /home/ws/btb/app/storage \
-    #&& chmod -R 777 /home/ws/btb/app/storage \
+    && if [ ! -d "/home/ws/btb" ]; then git clone --branch develop git@github.com:Bruno-de-l-Escaille/btbApp.git /home/ws/btb \
+    && cd /home/ws/btb/workbench/brunodelescaille/proxyttp \
+    && composer self-update \
+    && composer update \
+    && cd /home/ws/btb \
+    && composer update \
+    && chown -R web:web /home/ws/btb/app/storage \
+    && chmod -R 777 /home/ws/btb/app/storage \
+    fi \
 
-    #&& if [ ! -d "/home/ws/apittp" ]; then git clone --branch master git@bitbucket.org:ttpit/api.git /home/ws/apittp; fi \
-    #&& cd /home/ws/apittp \
-    #&& composer update \
-
-
-    #&& tail -f /dev/null
-
-CMD tail -f /dev/null
+    && if [ ! -d "/home/ws/apittp" ]; then git clone --branch master git@bitbucket.org:ttpit/api.git /home/ws/apittp \
+    && cd /home/ws/apittp \
+    && composer update \
+    fi

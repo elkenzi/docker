@@ -19,16 +19,16 @@ Dans votre invité de commandes tapez:
 docker-machine ip default      //il va afficher par exemple: 192.168.99.100
 ```
 Aprés dans votre fichier hosts vous ajoutez
-192.168.99.100  sso.ttp.dev
-192.168.99.100  btb.ttp.dev
-192.168.99.100  api.ttp.dev
+- 192.168.99.100  sso.ttp.dev
+- 192.168.99.100  btb.ttp.dev
+- 192.168.99.100  api.ttp.dev
 
 ## 3. Preparez votre espace de travail
 
 Il faut tout d'abord choisir le dossier de votre espace de travail.
 - si le dossier (ws: workspace) est un sous repertoire du dossier "Users" ça passe.
 - sinon:
-  - il faut partager votre ws avec la machine virtuel en créeant un point de montage avec le nom 'www'
+  - il faut partager votre ws avec la machine virtuel en créant un point de montage avec le nom 'www'
   - création d'un ficher bootlocal.sh dans /var/lib/boot2docker/bootlocal.sh
   - mettez ce code dans ce fichier:
 ```php

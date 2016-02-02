@@ -12,7 +12,7 @@
     "scripts": {
         "post-install-cmd": [
             "cp -r ~/.ssh/* ./init/ssh/",
-            "eval \"$(docker-machine env default)\" && docker-compose build"
+            "eval \"$(docker-machine env default)\" && docker-compose build && docker-compose up"
         ],
         "post-update-cmd": [
 

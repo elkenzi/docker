@@ -18,10 +18,12 @@ Dans votre invité de commandes tapez:
 ```php
 docker-machine ip default      //il va afficher par exemple: 192.168.99.100
 ```
-Aprés dans votre fichier hosts vous ajoutez
+Aprés dans votre fichier hosts vous ajoutez:
+```php
 - 192.168.99.100  sso.ttp.dev
 - 192.168.99.100  btb.ttp.dev
 - 192.168.99.100  api.ttp.dev
+```
 
 ## 3. Preparez votre espace de travail
 

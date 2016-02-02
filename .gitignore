@@ -1,0 +1,4 @@
+/init/ssh/id_rsa
+/init/ssh/id_rsa.pub
+/init/ssh/known_hosts
+/vendor/

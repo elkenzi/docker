@@ -18,8 +18,10 @@ Il faut tout d'abord choisir le dossier de votre espace de travail.
   - il faut partager votre ws avec la machine virtuel en créeant un point de montage avec le nom 'www'
   - création d'un ficher bootlocal.sh dans /var/lib/boot2docker/bootlocal.sh
   - mettez ce code dans ce fichier:
-  - <script>mkdir /var/www
-mount -t vboxsf www /var/www</script>
+<script>
+mkdir /var/www
+mount -t vboxsf www /var/www
+</script>
 
 git clone git@github.com:elkenzi/docker.git
 

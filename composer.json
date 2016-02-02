@@ -1,0 +1,21 @@
+{
+    "name": "ttpit/docker",
+    "description": "Docker porject for ttp env",
+    "authors": [
+        {
+            "name": "mohamed",
+            "email": "elhachmi@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "scripts": {
+        "post-install-cmd": [
+            "cp -r ~/.ssh/* ./init/ssh/",
+            "eval \"$(docker-machine env default)\" && docker-compose build"
+        ],
+        "post-update-cmd": [
+
+        ]
+    }
+}

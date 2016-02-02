@@ -9,7 +9,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "elkenzi/docker": "1.0" 
+    },
     "scripts": {
         "post-install-cmd": [
             "cp -r ~/.ssh/* ./init/ssh/",

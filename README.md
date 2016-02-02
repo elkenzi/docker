@@ -7,7 +7,7 @@ Installation et configuration des applications et de l'envirenement dev de tamta
 - Exemple: ubunto
 https://docs.docker.com/engine/installation/ubuntulinux/
 
-## pour les utilisateurs Mac et windows
+### pour les utilisateurs Mac et windows
 https://www.docker.com/products/docker-toolbox
 
 ## 2. Preparez votre espace de travail

@@ -28,8 +28,8 @@ Aprés dans votre fichier hosts vous ajoutez:
 ## 3. Preparez votre espace de travail
 
 Il faut tout d'abord choisir le dossier de votre espace de travail.
-- si le dossier (ws: workspace) est un sous repertoire du dossier "Users" ça passe.
-- sinon:
+- Si le dossier (ws: workspace) est un sous repertoire du dossier "Users" ça passe.
+- Sinon:
   - il faut partager votre ws avec la machine virtuel en créant un point de montage avec le nom 'www'
   - création d'un ficher bootlocal.sh dans /var/lib/boot2docker/bootlocal.sh
   - mettez ce code dans ce fichier:

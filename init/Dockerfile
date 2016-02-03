@@ -32,7 +32,7 @@ CMD if [ ! -d "/home/ws/sso" ]; then git clone --branch develop git@github.com:B
     && git submodule update --init --recursive \
     && cp /home/ws/sso/config/autoload/local.php.dist.test /home/ws/sso/config/autoload/local.php \
     && mysql -h db -u root -proot -e "CREATE DATABASE IF NOT EXISTS sso DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;" \
-    && /home/ws/sso/vendor/Doctrine/DoctrineModule/bin/doctrine-module orm:schema-tool:update -f \
+    && /home/ws/sso/vendor/Doctrine/DoctrineModule/bin/doctrine-module orm:schema-tool:update -f; \
     fi \
 
     && if [ ! -d "/home/ws/btb" ]; then git clone --branch develop git@github.com:Bruno-de-l-Escaille/btbApp.git /home/ws/btb \
@@ -42,10 +42,10 @@ CMD if [ ! -d "/home/ws/sso" ]; then git clone --branch develop git@github.com:B
     && cd /home/ws/btb \
     && composer update \
     && chown -R web:web /home/ws/btb/app/storage \
-    && chmod -R 777 /home/ws/btb/app/storage \
+    && chmod -R 777 /home/ws/btb/app/storage; \
     fi \
 
     && if [ ! -d "/home/ws/apittp" ]; then git clone --branch master git@bitbucket.org:ttpit/api.git /home/ws/apittp \
     && cd /home/ws/apittp \
-    && composer update \
+    && composer update; \
     fi

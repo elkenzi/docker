@@ -1,9 +1,8 @@
 cd docker
-cp -r ~/.ssh/* ./init/ssh/
-docker-machine start default
-#docker-machine create --driver virtualbox ttp
-#docker-machine start ttp
-#eval "$(docker-machine env ttp)"
-eval "$(docker-machine env default)" 
+#cp -r ~/.ssh/* ./init/ssh/
+docker-machine stop default
+docker-machine create -d virtualbox --virtualbox-disk-size "10000" ttp
+docker-machine start ttp
+eval "$(docker-machine env ttp)" 
 docker-compose build
 docker-compose up

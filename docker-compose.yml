@@ -21,15 +21,6 @@ nginx:
         - ./..:/var/www
         - "./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro"
 
-# php56:
-#     image: php:5.6.17-fpm
-#     volumes:
-#         - ./apache/conf/php.ini:/etc/php5/apache2/conf.d/30-custom.ini
-#     ports:
-#         - "9009:9009"
-#     links:
-#         - db:db
-
 php7:
     image: tamtamp/php7
     ports:
@@ -47,10 +38,3 @@ db:
         - /var/lib/boot2docker/mysql:/var/lib/mysql
     environment:
         - "MYSQL_ROOT_PASSWORD=root"
-
-init:
-   build: ./init
-   volumes:
-       - ./..:/home/ws
-   links:
-       - "db:db"

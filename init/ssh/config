@@ -1,5 +1,0 @@
-host github.com
-     user git
-     port 22
-     identityfile /root/.ssh/id_rsa
-     StrictHostKeyChecking no

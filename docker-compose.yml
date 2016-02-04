@@ -1,6 +1,5 @@
 apache-php559:
     build: ./apache
-    restart: always
     ports:
         - "80:80"
     volumes:
@@ -14,7 +13,6 @@ apache-php559:
 
 nginx:
     image: nginx
-    restart: always
     ports:
         - "8080:8080"
     links:
@@ -25,7 +23,6 @@ nginx:
 
 php7:
     image: tamtamp/php7
-    restart: always
     ports:
         - "9000:9000"
     volumes:
@@ -35,7 +32,6 @@ php7:
 
 db:
     image: mysql
-    restart: always
     ports:
         - "3306:3306"
     volumes:

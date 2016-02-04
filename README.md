@@ -8,7 +8,7 @@ https://www.docker.com/products/docker-toolbox
 
 ### 1.2 Clonnez le projet de la configuration docker
 
-En tenant compte que votre dossier espace de travail est un sous repertoir du dossier /Users 
+En tenant compte que votre dossier espace de travail est un sous repertoir du dossier /Users (sinon voir la partie 3)
 
 Accédez à votre espace de travail puis:
 
@@ -66,7 +66,14 @@ Aprés dans votre fichier hosts vous ajoutez:
 - 192.168.99.100  api.ttp.dev
 ```
 
-### 2.5 Preparez votre espace de travail
+### 2.5 Preparez votre espace de travail (voir partie 3)
+
+### 2.6 install.sh
+```php
+./docker/script/install.sh
+```
+
+## 3. Preparez votre espace de travail
 
 Il faut tout d'abord choisir le dossier de votre espace de travail.
 Accédez à virtualBox >> choisissez votre machine >> configuration >> dossiers partagés
@@ -80,8 +87,7 @@ Accédez à virtualBox >> choisissez votre machine >> configuration >> dossiers 
 mkdir /var/www
 mount -t vboxsf www /var/www
 ```
-
-### 2.6 install.sh
+  - modifier le fichier ./docker/docker-compose.yml en replacement
 ```php
-./docker/script/install.sh
+./..:/var/www  par  /var/www:/var/www
 ```

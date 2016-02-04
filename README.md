@@ -90,4 +90,5 @@ mount -t vboxsf www /var/www
   - modifier le fichier ./docker/docker-compose.yml en replacement
 ```php
 ./..:/var/www  par  /var/www:/var/www
+./xxx/yyy  par /var/www/docker/xxx/yyyy
 ```

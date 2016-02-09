@@ -85,7 +85,7 @@ Accédez à virtualBox >> choisissez votre machine >> configuration >> dossiers 
   - mettez ce code dans ce fichier:
 ```sh
 mkdir /var/www
-mount -t vboxsf -o uid=1000,gid=1000 www /var/www
+mount -t vboxsf -o remount,gid=1000,uid=1000,rw www /var/www
 ```
   - modifier le fichier ./docker/docker-compose.yml en replacement
 ```sh

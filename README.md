@@ -28,9 +28,9 @@ docker-machine ip ttp      //il va afficher par exemple: 192.168.99.100
 ```
 Aprés dans votre fichier hosts vous ajoutez:
 ```php
-- 192.168.99.100  sso.ttp.dev
-- 192.168.99.100  btb.ttp.dev
-- 192.168.99.100  api.ttp.dev
+- 192.168.99.100  local.sso.tamtam.pro
+- 192.168.99.100  local.btb.tamtam.pro
+- 192.168.99.100  local.api.tamtam.pro
 ```
 
 ## 2. installation windows

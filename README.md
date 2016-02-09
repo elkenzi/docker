@@ -87,8 +87,5 @@ Accédez à virtualBox >> choisissez votre machine >> configuration >> dossiers 
   mkdir /var/www
   mount -t vboxsf -o remount,gid=1000,uid=1000,rw www /var/www
   ```
-  - modifier le fichier ./docker/docker-compose.yml en replacement
-  ```sh
-  ./..:/var/www  par  /var/www:/var/www
-  ./xxx/yyy  par /var/www/docker/xxx/yyyy
-  ```
+  - Renomez docker-compose.yml par docker-compose.yml.back
+  - Renomez docker-compose.v2.yml par docker-compose.yml

@@ -83,11 +83,12 @@ Accédez à virtualBox >> choisissez votre machine >> configuration >> dossiers 
   - Vous ajoutez votre dossier comme dossier permanent en créant un point de montage avec le nom 'www'.
   - création d'un ficher bootlocal.sh dans /var/lib/boot2docker/bootlocal.sh
   - mettez ce code dans ce fichier:
-```php
+```sh
 mkdir /var/www
-mount -t vboxsf www /var/www
+mount -t vboxsf -o uid=1000,gid=1000 www /var/www
 ```
   - modifier le fichier ./docker/docker-compose.yml en replacement
-```php
+```sh
 ./..:/var/www  par  /var/www:/var/www
+./xxx/yyy  par /var/www/docker/xxx/yyyy
 ```

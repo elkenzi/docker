@@ -1,5 +1,5 @@
-/init/ssh/id_rsa
-/init/ssh/id_rsa.pub
-/init/ssh/known_hosts
+/api/ssh/id_rsa
+/api/ssh/id_rsa.pub
+/api/ssh/known_hosts
 /vendor/
 /.DS_Store

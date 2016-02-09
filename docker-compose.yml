@@ -1,7 +1,7 @@
 api:
     build: ./api
     volumes:
-        - /var/www/apittp:/var/www/apittp
+        - ./../apittp:/var/www/apittp
     tty: true
 
 apache-php559:
@@ -12,8 +12,8 @@ apache-php559:
     volumes_from:
         - api
     volumes:
-        - /var/www/docker/apache/conf/php.ini:/etc/php5/apache2/conf.d/30-custom.ini
-        - /var/www/docker/apache/sites:/etc/apache2/sites-enabled
+        - ./apache/conf/php.ini:/etc/php5/apache2/conf.d/30-custom.ini
+        - ./apache/sites:/etc/apache2/sites-enabled
     environment:
         - ALLOW_OVERRIDE=true
     links:
@@ -29,7 +29,7 @@ nginx:
     volumes_from:
         - api
     volumes:
-        - /var/www/docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+        - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
 
 php7:
     image: tamtamp/php7

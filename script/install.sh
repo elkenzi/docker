@@ -1,5 +1,5 @@
 cd docker
-#cp -r ~/.ssh/* ./init/ssh/
+#cp -r ~/.ssh/* ./api/ssh/
 docker-machine stop default
 docker-machine create -d virtualbox --virtualbox-disk-size "10000" ttp
 docker-machine start ttp

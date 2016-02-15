@@ -12,18 +12,18 @@ En tenant compte que votre dossier espace de travail est un sous repertoir du do
  
 Accédez à votre espace de travail puis:
 
-```php
+```sh
 git clone git@github.com:elkenzi/docker.git
 ```
 puis:
-```php
+```sh
 ./docker/script/install.sh
 ```
 
 ### 1.3 Définir les virtual hosts
 
 Dans votre invité de commandes tapez:
-```php
+```sh
 docker-machine ip ttp      //il va afficher par exemple: 192.168.99.100
 ```
 Aprés dans votre fichier hosts vous ajoutez:

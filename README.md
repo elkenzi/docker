@@ -88,4 +88,4 @@ Accédez à virtualBox >> choisissez votre machine >> configuration >> dossiers 
   mount -t vboxsf -o remount,gid=1000,uid=1000,rw www /var/www
   ```
   - Renomez docker-compose.yml par docker-compose.yml.back
-  - Renomez docker-compose.v2.yml par docker-compose.yml
+  - Renomez docker-compose.v2.yml par docker-compose.yml .

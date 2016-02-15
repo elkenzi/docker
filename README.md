@@ -9,7 +9,7 @@ https://www.docker.com/products/docker-toolbox
 ### 1.2 Clonnez le projet de la configuration docker
 
 En tenant compte que votre dossier espace de travail est un sous repertoir du dossier /Users (sinon voir la partie 3)
-
+ 
 Accédez à votre espace de travail puis:
 
 ```php

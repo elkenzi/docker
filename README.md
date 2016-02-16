@@ -3,22 +3,63 @@
 
 Installation et configuration des applications et de l'envirenement dev de tamtam Pro
 
-## 1. Installation de docker
+## 1. Installation Mac
 
-### Pour les utilisateurs linux
-- Exemple: ubunto
-https://docs.docker.com/engine/installation/ubuntulinux/
-
-### pour les utilisateurs Mac et windows
+### 1.1 Installation de docker
 https://www.docker.com/products/docker-toolbox
 
-il faut bien vérifier qu'une machine dont le nom est 'default' a été bien bien créée dans le virtual box.
+### 1.2 Clonnez le projet de la configuration docker
 
-## 2. Définir les virtual hosts
+En tenant compte que votre dossier espace de travail est un sous repertoir du dossier /Users (sinon voir la partie 3)
+ 
+Accédez à votre espace de travail puis:
+
+```sh
+git clone git@github.com:elkenzi/docker.git
+```
+puis:
+```sh
+./docker/script/install.sh
+```
+
+### 1.3 Définir les virtual hosts
+
+Dans votre invité de commandes tapez:
+```sh
+docker-machine ip ttp      //il va afficher par exemple: 192.168.99.100
+```
+Aprés dans votre fichier hosts vous ajoutez:
+```php
+- 192.168.99.100  local.sso.tamtam.pro
+- 192.168.99.100  local.btb.tamtam.pro
+- 192.168.99.100  local.api.tamtam.pro
+```
+
+## 2. installation windows
+
+### 2.1 Installation de docker
+
+https://www.docker.com/products/docker-toolbox
+
+### 2.2 Clonnez le projet de la configuration docker
+
+Accédez à votre espace de travail puis:
+
+```php
+git clone git@github.com:elkenzi/docker.git
+```
+### 2.3 Configure.sh
+
+En ligne de commande (cmder ou git bash)
+```php
+./docker/script/windows/configure.sh
+```
+
+### 2.4 Définir les virtual hosts
 
 Dans votre invité de commandes tapez:
 ```php
-docker-machine ip default      //il va afficher par exemple: 192.168.99.100
+docker-machine ip ttp      //il va afficher par exemple: 192.168.99.100
 ```
 Aprés dans votre fichier hosts vous ajoutez:
 ```php
@@ -27,30 +68,26 @@ Aprés dans votre fichier hosts vous ajoutez:
 - 192.168.99.100  api.ttp.dev
 ```
 
+### 2.5 Preparez votre espace de travail (voir partie 3)
+
+### 2.6 install.sh
+```php
+./docker/script/install.sh
+```
+
 ## 3. Preparez votre espace de travail
 
 Il faut tout d'abord choisir le dossier de votre espace de travail.
-- si le dossier (ws: workspace) est un sous repertoire du dossier "Users" ça passe.
-- sinon:
-  - il faut partager votre ws avec la machine virtuel en créant un point de montage avec le nom 'www'
+Accédez à virtualBox >> choisissez votre machine >> configuration >> dossiers partagés
+
+- Si dans la section des dossiers permanent vous trouvez un repertoire et votre dossier workspace est un sous ce dossier de ce repertoir, ça passe.
+- Sinon si la section des dossiers permanents est vide ou votre dossier workspace est dans un autre endroit: 
+  - Vous ajoutez votre dossier comme dossier permanent en créant un point de montage avec le nom 'www'.
   - création d'un ficher bootlocal.sh dans /var/lib/boot2docker/bootlocal.sh
   - mettez ce code dans ce fichier:
-```php
-mkdir /var/www
-mount -t vboxsf www /var/www
-```
-
-## 4. Clonnez le projet de la configuration docker
-
-Accédez à votre espace de travail puis:
-
-```php
-git clone git@github.com:elkenzi/docker.git
-```
-
-puis:
-
-```php
-./docker/script/init.sh
-```
-
+  ```sh
+  mkdir /var/www
+  mount -t vboxsf -o remount,gid=1000,uid=1000,rw www /var/www
+  ```
+  - Renomez docker-compose.yml par docker-compose.yml.back
+  - Renomez docker-compose.v2.yml par docker-compose.yml .

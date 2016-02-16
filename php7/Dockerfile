@@ -20,6 +20,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN pecl install apcu-5.1.3 && echo extension=apcu.so > /usr/local/etc/php/conf.d/apcu.ini
 
+RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
+
 WORKDIR /var/www
 
 CMD ["php-fpm"]
